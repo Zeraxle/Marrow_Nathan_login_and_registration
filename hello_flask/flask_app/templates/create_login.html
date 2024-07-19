@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Users</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login_validation.css') }}">
+</head>
+<body>
+    <main>
+        <form action="/register" method="POST">
+            <h1>Register</h1>
+            {% with messages = get_flashed_messages(category_filter=['register']) %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <div>
+                        <p>{{message}}</p>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name">
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name">
+            <label for="email">Email:</label>
+            <input type="text" name="email">
+            <label for="password">Create Password:</label>
+            <input type="password" name="password" id="password">
+            <label for="password_confirm">Confirm Password:</label>
+            <input type="password" name="password_confirm" id="password_confirm">
+            <input type="submit" value="Register" class="register">
+        </form>
+        <form action="/login" method="POST">
+            <h2>Login</h2>
+            {% with messages = get_flashed_messages(category_filter=['login']) %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <div>
+                        <p>{{message}}</p>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <label for="email">Email Login:</label>
+            <input type="text" name="email" id="email">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password">
+            <input type="submit" value="Login">
+        </form>
+    </main>
+    
+</body>
+</html>

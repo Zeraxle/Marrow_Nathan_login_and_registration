@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+}
+form {
+    display: flex;
+    flex-flow: column;
+    gap: 30px;
+    align-items: center
+}
+
+.register {
+    padding: 5px 20px;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+button {
+    padding: 5px 20px;
+}
+
+button a {
+    text-decoration: none;
+    color: black;
+}
+
+/* End of create.html */
+
+/* Start read_all.html */
+
+table {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+tr {
+    display: flex;
+    gap: 20px;
+}
+
+th, td {
+    border-bottom: black 1px solid;
+}
